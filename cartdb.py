@@ -25,9 +25,9 @@ class Cart:
         return self.data['cart']
 
 
-# cart = Cart('cartdb.json')
-# cart.add('Redmi','Redmi 9')
-# print(cart.data)
+cart = Cart('cartdb.json')
+cart.add('Redmi','Redmi 9')
+print(cart.data)
 
 
         

@@ -1,10 +1,8 @@
 from telegram.ext import Updater,CommandHandler,CallbackContext,MessageHandler,Filters,CallbackQueryHandler
 from telegram import Update,ReplyKeyboardMarkup,KeyboardButton,InlineKeyboardMarkup,InlineKeyboardButton
-import os
 from db import DB
 from cartdb import Cart
-# get token from env
-TOKEN = os.environ['TOKEN']
+
 db = DB('db.json')
 cart = Cart('cartdb.json')
 
@@ -78,7 +76,7 @@ def query(update: Update, context: CallbackContext):
         lon = 66.973233
         bot.sendLocation(chat_id=chat_id,latitude=lat,longitude=lon)
 
-    query.answer('Hi')
+    query.answer('Hello')
     print(data)
     
 
@@ -175,25 +173,3 @@ def get_cart(update: Update, context: CallbackContext):
             [InlineKeyboardButton(text='🛒 Clear cart',callback_data='clear_cart')],
         ])
         bot.sendMessage(chat_id=chat_id,text=text,reply_markup=keyboard)
-        
-
-        
-
-            
-updater = Updater(token=TOKEN)
-
-updater.dispatcher.add_handler(CommandHandler('start',start))
-# Add handler for photo message
-updater.dispatcher.add_handler(MessageHandler(Filters.photo,photo))
-updater.dispatcher.add_handler(MessageHandler(Filters.text('🛍 Shop'),shop))
-updater.dispatcher.add_handler(MessageHandler(Filters.text('🛒 Cart'),get_cart))
-updater.dispatcher.add_handler(MessageHandler(Filters.text('📝 About'),about))
-updater.dispatcher.add_handler(MessageHandler(Filters.text('📞 Contact'),contact))
-updater.dispatcher.add_handler(MessageHandler(Filters.text('Main menu'),start))
-updater.dispatcher.add_handler(CallbackQueryHandler(phone_list,pattern='phone_list'))
-updater.dispatcher.add_handler(CallbackQueryHandler(phone,pattern='phone'))
-updater.dispatcher.add_handler(CallbackQueryHandler(add_cart,pattern='add_cart'))
-updater.dispatcher.add_handler(CallbackQueryHandler(query))
-
-updater.start_polling()
-updater.idle()

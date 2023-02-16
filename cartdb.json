@@ -1,4 +1,16 @@
 {
     "cart": [
+        {
+            "brand": "Apple",
+            "model_id": "15"
+        },
+        {
+            "brand": "Apple",
+            "model_id": "15"
+        },
+        {
+            "brand": "Redmi",
+            "model_id": "36"
+        }
     ]
 }
