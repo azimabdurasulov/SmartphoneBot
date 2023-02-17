@@ -24,7 +24,7 @@ app = Flask(__name__)
 TOKEN = os.environ['TOKEN']
 bot = Bot(TOKEN)
 
-@app.route('/webhook', methods=['POST', 'GET'])
+@app.route('/api', methods=['POST', 'GET'])
 def webhook():
     if request.method == 'GET':
         return 'hi from Python-2022I'
