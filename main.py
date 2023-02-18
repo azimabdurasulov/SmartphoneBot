@@ -3,8 +3,8 @@ from telegram import Update,ReplyKeyboardMarkup,KeyboardButton,InlineKeyboardMar
 from db import DB
 from cartdb import Cart
 
-db = DB('db.json')
-cart = Cart('cartdb.json')
+db = DB('SmartphoneBot/db.json')
+cart = Cart('SmartphoneBot/cartdb.json')
 
 
 def start(update: Update, context: CallbackContext):
