@@ -29,7 +29,7 @@ def webhook():
     if request.method == 'GET':
         return 'hi from Python-2022I'
     # get data from request
-    elif request.method == 'POST':
+    else:
         data = request.get_json(force=True)
 
         # update
