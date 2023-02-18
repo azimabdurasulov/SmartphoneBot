@@ -57,8 +57,8 @@ def query(update: Update, context: CallbackContext):
     data = query.data
     bot = context.bot
     if data=='number':
-        phone_1 ='+998661234567'
-        phone_2 ='+998661234567'
+        phone_1 ='+998930629005'
+        phone_2 ='+998932358095'
         text = f'Our phone numbers:\n{phone_1}\n{phone_2}'
         bot.sendMessage(text=text,chat_id=chat_id)
     elif data=='email':
