@@ -27,7 +27,7 @@ bot = Bot(TOKEN)
 @app.route('/api', methods=['POST', 'GET'])
 def webhook():
     if request.method == 'GET':
-        return 'hi from Python-2022I'
+        return '<h1> hi from Python-2022I <h1>'
     # get data from request
     else:
         data = request.get_json(force=True)
