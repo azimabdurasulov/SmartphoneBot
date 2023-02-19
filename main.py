@@ -72,8 +72,8 @@ def query(update: Update, context: CallbackContext):
     elif data=='location':
         # 39.644053, 66.973233
 
-        lat = 39.644053
-        lon = 66.973233
+        lat = 39.693455
+        lon = 66.982256
         bot.sendLocation(chat_id=chat_id,latitude=lat,longitude=lon)
 
     query.answer('Hello')
